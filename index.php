@@ -20,22 +20,13 @@
            
         }
 
-        .test{
+        .vertical-line{
             position: absolute;
             width:2px;
             background-color:black;
         }
 
-        a::before{
-            content:'';
-            position: absolute;
-            background-color:black;
-            height:3px;
-            width:30px;
-            top:50%;
-            left:-5px;
-        }
-        p::before{
+        p::before, a::before{
             content:'';
             position: absolute;
             background-color:black;
@@ -98,7 +89,7 @@
                     let Line_top = directChilds[1].getBoundingClientRect().top
 
                     let div = document.createElement("DIV")
-                    div.classList.add("test")
+                    div.classList.add("vertical-line")
                     div.style.left = Line_left+'px'
                     div.style.top = Line_top+'px'
                     div.style.height = Line_height+'px'
