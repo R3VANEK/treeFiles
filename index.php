@@ -9,7 +9,14 @@
 <body>
     
 
-
-    lorem ipsum
+    <?php
+    
+        $dir = './exampleRootFolder';
+        $test = scandir($dir);
+        print_r($test);
+    
+    
+    ?>
+    
 </body>
 </html>

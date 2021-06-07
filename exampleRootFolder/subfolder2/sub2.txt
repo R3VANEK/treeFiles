@@ -1,0 +1,1 @@
+Hello, Im located in ./exampleRootFolder/subfolder2, how is your day going? I hope it is nice
