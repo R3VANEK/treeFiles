@@ -11,11 +11,25 @@
 
     <?php
     
-        $dir = './exampleRootFolder';
-        $test = scandir($dir);
-        print_r($test);
-    
-    
+        function recursive_scan($given_dir, $margin_value){
+
+            $scanned_dir = scandir($given_dir);
+
+            for($i = 2; $i < count($scanned_dir); $i++){
+
+                if(substr($scanned_dir[$i], -4, -3) == '.'){
+                    $href = $given_dir.'/'.$scanned_dir[$i];
+                    echo "<a href='$href' style='margin-left: $margin_value%'>".$scanned_dir[$i]."</a>";
+                }
+                else{
+                    echo "<p style='margin-left : $margin_value%'>".$scanned_dir[$i]."</p>";
+                    recursive_scan($given_dir.'/'.$scanned_dir[$i], $margin_value + 5);
+                }
+
+            }
+        };
+
+        recursive_scan("./exampleRootFolder", 0);
     ?>
     
 </body>
